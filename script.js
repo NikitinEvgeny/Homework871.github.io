@@ -7,12 +7,14 @@ if (isNaN(minValue) || isNaN(maxValue) || minValue > maxValue) {
     maxValue = 100;
 };
 
+
+minValue < -999 ? minValue = -999 : minValue;
+maxValue > 999 ? maxValue = 999 : maxValue;
+
 if (minValue > maxValue) {
     minValue = 0;
     maxValue = 100;
 };
-minValue < -999 ? minValue = -999 : minValue;
-maxValue > 999 ? maxValue = 999 : maxValue;
 
 alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
 let answerNumber = Math.floor((minValue + maxValue) / 2);
@@ -37,12 +39,17 @@ document.getElementById('btnRetry').addEventListener('click', function (event) {
         minValue = 0;
         maxValue = 100;
     };
+   
+    minValue < -999 ? minValue = -999 : minValue;
+    maxValue > 999 ? maxValue = 999 : maxValue;
+
+
     if (minValue > maxValue) {
         minValue = 0;
         maxValue = 100;
     };
-    minValue < -999 ? minValue = -999 : minValue;
-    maxValue > 999 ? maxValue = 999 : maxValue;
+
+
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
     gameRun = true;
     orderNumber = 1;
